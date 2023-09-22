@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context="CadastroActivity">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/digite_dados"
+                android:layout_width="165dp"
+                android:layout_height="57dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="26dp"
+                android:layout_marginBottom="15dp"
+                android:text="Digite Seus Dados"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/text_info"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_info"
+                android:layout_width="206dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="71dp"
+                android:text="@string/txt_text1"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/textView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/digite_dados" />
+
+            <ImageView
+                android:id="@+id/image_user"
+                android:layout_width="121dp"
+                android:layout_height="103dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="18dp"
+                android:background="#A6A6A6"
+                android:padding="24dp"
+                android:src="@drawable/ic_person"
+                app:layout_constraintBottom_toTopOf="@+id/image_perfil"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/image_perfil"
+                android:layout_width="120dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="33dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="89dp"
+                android:background="#3E5DED"
+                android:letterSpacing="0.03"
+                android:text="@string/txt_img1"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toTopOf="@+id/edit_text_nome"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text_info"
+                app:layout_constraintTop_toBottomOf="@+id/image_user" />
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="64dp"
+                android:text="Informações Gerais "
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_info" />
+
+
+            <EditText
+                android:id="@+id/edit_text_nome"
+                android:layout_width="379dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="17dp"
+                android:hint="@string/txt_name2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <EditText
+                android:id="@+id/edit_text_cpf"
+                android:layout_width="379dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="21dp"
+                android:hint="@string/txt_document"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_nome" />
+
+            <EditText
+                android:id="@+id/edit_text_data"
+                android:layout_width="379dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="19dp"
+                android:hint="@string/txt_birth"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_cpf" />
+
+            <EditText
+                android:id="@+id/edit_text_school"
+                android:layout_width="379dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="19dp"
+                android:hint="@string/txt_school"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_data" />
+
+            <EditText
+                android:id="@+id/edit_text_about_me"
+                android:layout_width="379dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="22dp"
+                android:hint="@string/txt_about_me"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_school" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="124dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/bg_button_normal"
+                android:text="@string/txt_next2"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_about_me" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
