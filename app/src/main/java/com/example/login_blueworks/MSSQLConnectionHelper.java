@@ -14,13 +14,13 @@ public class MSSQLConnectionHelper {
 
     private static String mStringConnectionUrl;
 
-    private static String mStringServeripName = "meubancotcc.mssql.Somee.com";
+    private static String mStringServeripName = "meubancotcc.mssql.Postgre.com";
 
-    private static String mStringUserName = "blueworkstccv16_user";
+    private static String mStringUserName = "blueworks17_user";
 
-    private static String mStringPassword = "ci6RIcO5tt8J0l6ehw1gZ0xGLT4hNGaf";
+    private static String mStringPassword = "PRs43twwW3KLpbItgMWX4womFttqedZP";
 
-    private static String mStringDatabase = "blueworkstccv16";
+    private static String mStringDatabase = "blueworks17";
 
 
     public static Connection getConnection(Context mContext) {
@@ -38,8 +38,8 @@ public class MSSQLConnectionHelper {
 
             Class.forName("org.postgresql.Driver");
 //              mConnection = DriverManager.getConnection("jdbc:postgresql://domain.com:5432/blueworkstccv16", "blueworkstccv16_user", "ci6RIcO5tt8J0l6ehw1gZ0xGLT4hNGaf");
-            mConnection = DriverManager.getConnection("jdbc:postgresql://dpg-cilkrplgkuvinflboiig-a.oregon-postgres.render.com:5432/blueworkstccv16", "blueworkstccv16_user", "ci6RIcO5tt8J0l6ehw1gZ0xGLT4hNGaf");
-
+           // mConnection = DriverManager.getConnection("jdbc:postgresql://dpg-cilkrplgkuvinflboiig-a.oregon-postgres.render.com:5432/blueworkstccv16", "blueworkstccv16_user", "ci6RIcO5tt8J0l6ehw1gZ0xGLT4hNGaf");
+            mConnection = DriverManager.getConnection("jdbc:postgresql://dpg-ck64rvgs0i2c73d9p2n0-a.oregon-postgres.render.com:5432/blueworks17 ", "blueworks17_user", "PRs43twwW3KLpbItgMWX4womFttqedZP");
             Log.i(TAG, "Connection Successful");
 
         } catch (ClassNotFoundException e) {

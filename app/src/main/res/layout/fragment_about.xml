@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/txt_about"
-                android:textSize="25dp"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -58,8 +58,8 @@ Alterações nos Termos:
 Podemos atualizar estes termos periodicamente. O uso continuado da plataforma após as alterações constitui sua aceitação das novas condições.
 Ao acessar e usar nossa Plataforma de Empregabilidade, você concorda com estes termos. Lembre-se de que o não cumprimento desses termos pode resultar em medidas disciplinares, incluindo a suspensão ou rescisão da conta. Obrigado por se juntar a nós em nossa busca pela promoção da empregabilidade e do sucesso profissional!"
                 android:textSize="18dp"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="52dp" />
+                tools:layout_editor_absoluteX="16sp"
+                tools:layout_editor_absoluteY="52sp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

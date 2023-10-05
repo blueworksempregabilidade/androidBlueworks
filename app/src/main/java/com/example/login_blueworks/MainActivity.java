@@ -13,10 +13,19 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText mEditTextCredentials,mEditTextPassword;
     private Button mButtonSignIn;
+    private Button  ButtonSignUp;
+   // Button   ButtonForgotPassword;
+
+
 
     private boolean isRequired(){
         if(TextUtils.isEmpty(mEditTextCredentials.getText())||
@@ -26,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     }
+
 
 
     private void performNextActivity(){
@@ -67,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         mEditTextCredentials = findViewById(R.id.editText_credentials);
 
         mEditTextPassword = findViewById(R.id.editText_password);
@@ -75,7 +86,54 @@ public class MainActivity extends AppCompatActivity {
         mButtonSignIn = findViewById(R.id.button_sign_in);
         mButtonSignIn.setOnClickListener(new ClickButtonSignIn());
 
+
+
+       /*ButtonSignUp = findViewById(R.id.textView_sign_up);
+
+       ButtonSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this,CadastroActivity.class);
+                startActivity(intent);
+            }
+        });*/
+
+
     }
-    
+    public String sendGetRequest(String urlString) {
+        try {
+            URL url = new URL(urlString);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+
+            int responseCode = conn.getResponseCode();
+
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                String inputLine;
+                StringBuilder response = new StringBuilder();
+
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine);
+                }
+
+                in.close();
+
+                return response.toString();
+            } else {
+                // Lidar com erros aqui
+            }
+
+            conn.disconnect();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+
+
 
 }
